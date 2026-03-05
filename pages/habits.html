@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Habit Tracker</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="../index.html">Dashboard</a>
+      <a href="./work.html">Work</a>
+      <a href="./personal.html">Personal</a>
+      <a href="./habits.html" aria-current="page">Habits</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./analytics.html">Analytics</a>
+      <a href="./timetable.html">TimeTable</a>
+    </nav>
+  </header>
+
+  <main class="page-grid">
+    <section class="card">
+      <h2>Today Habit Score</h2>
+      <p id="habitTodayScore">0 / 4 completed</p>
+      <p id="habitDateLabel"></p>
+    </section>
+
+    <section class="card">
+      <h2>Quick Habit Toggle</h2>
+      <div class="habits-row">
+        <label><input id="habitStudy" type="checkbox"> Study</label>
+        <label><input id="habitReading" type="checkbox"> Reading</label>
+        <label><input id="habitWorkout" type="checkbox"> Workout</label>
+        <label><input id="habitPlanning" type="checkbox"> Planning</label>
+      </div>
+
+      <div class="stack-form" style="margin-top: 10px;">
+        <input id="habitRemark" type="text" placeholder="Remark (optional)">
+      </div>
+
+      <p id="habitMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="../auth.js"></script>
+  <script type="module" src="./habits.js"></script>
+</body>
+</html>

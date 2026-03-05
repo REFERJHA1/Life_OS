@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Journal</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="../index.html">Dashboard</a>
+      <a href="./work.html">Work</a>
+      <a href="./personal.html">Personal</a>
+      <a href="./habits.html">Habits</a>
+      <a href="./journal.html" aria-current="page">Journal</a>
+      <a href="./analytics.html">Analytics</a>
+      <a href="./timetable.html">TimeTable</a>
+    </nav>
+  </header>
+
+  <main class="page-grid">
+    <section class="card">
+      <h2>Quick Journal Entry</h2>
+      <p class="muted">Reflect in 60 seconds. One sentence is enough.</p>
+      <form id="journalPageForm" class="stack-form">
+        <input id="journalGood" type="text" placeholder="Best thing today" required autofocus>
+        <input id="journalProblem" type="text" placeholder="Most challenging thing" required>
+        <input id="journalImprovement" type="text" placeholder="Improvement for tomorrow" required>
+
+        <div class="mood-block">
+          <label for="journalMood" class="mood-label">Mood <span id="moodValue">5</span> / 10</label>
+          <div class="mood-range-row">
+            <span>😞</span>
+            <input id="journalMood" type="range" min="1" max="10" value="5" required>
+            <span>😊</span>
+          </div>
+        </div>
+
+        <input id="journalRemark" type="text" placeholder="Remark (optional): Word of the day + Gratitude">
+        <button id="journalSaveBtn" type="submit">Save Journal</button>
+      </form>
+      <p id="journalMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Today's Journal Status</h2>
+      <p id="journalDateLabel"></p>
+      <p id="journalMoodToday" class="mood-display">Mood Today: -- / 10</p>
+      <p id="journalEntryStatus">Entry: Not saved</p>
+      <p id="journalStreak" class="streak-hero">🔥 0 day streak</p>
+      <p id="journalTip" class="muted">Tip: One small improvement daily compounds.</p>
+
+      <h3 class="subheading">Daily Reflection Completion</h3>
+      <div class="progress-track">
+        <div id="journalProgressBar" class="progress-fill" style="width:0%"></div>
+      </div>
+      <p id="journalProgressText" class="muted">Progress: 0%</p>
+
+      <h3 class="subheading">Journal History</h3>
+      <ul id="journalHistoryList"></ul>
+    </section>
+  </main>
+
+  <script src="../auth.js"></script>
+  <script type="module" src="./journal.js"></script>
+</body>
+</html>

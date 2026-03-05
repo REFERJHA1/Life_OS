@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Analytics</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="../index.html">Dashboard</a>
+      <a href="./work.html">Work</a>
+      <a href="./personal.html">Personal</a>
+      <a href="./habits.html">Habits</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./analytics.html" aria-current="page">Analytics</a>
+      <a href="./timetable.html">TimeTable</a>
+    </nav>
+  </header>
+
+  <main class="page-grid">
+    <section class="card">
+      <h2>Weekly Productivity</h2>
+      <p id="weeklySummary" class="muted">Last 7 days</p>
+      <div id="weeklyChart" class="bar-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Monthly Habit Completion</h2>
+      <p id="monthlyHabitSummary" class="stat-value">--%</p>
+      <p id="monthlyHabitMeta" class="muted">--</p>
+    </section>
+
+    <section class="card">
+      <h2>Mood Trend</h2>
+      <p id="moodSummary" class="muted">Last 7 days</p>
+      <div id="moodChart" class="bar-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Yearly Consistency</h2>
+      <p id="yearlyConsistencyValue" class="stat-value">--%</p>
+      <p id="yearlyConsistencyMeta" class="muted">--</p>
+    </section>
+  </main>
+
+  <script src="../auth.js"></script>
+  <script type="module" src="./analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Tasks</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Personal Tasks</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="../index.html">Dashboard</a>
+      <a href="./work.html">Work</a>
+      <a href="./personal.html" aria-current="page">Personal</a>
+      <a href="./habits.html">Habits</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./analytics.html">Analytics</a>
+      <a href="./timetable.html">TimeTable</a>
+    </nav>
+  </header>
+
+  <main class="page-grid">
+    <section class="card">
+      <h2>Add Personal Task</h2>
+      <form id="personalTaskForm" class="stack-form">
+        <input id="personalDate" type="date" required>
+        <input id="personalTask" type="text" placeholder="Task" required>
+        <select id="personalCategory" required>
+          <option value="General" selected>General</option>
+          <option value="Study">Study</option>
+          <option value="Health">Health</option>
+          <option value="Home">Home</option>
+          <option value="Finance">Finance</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="personalStatus" required>
+          <option value="Pending" selected>Pending</option>
+          <option value="Feedback Pending">Feedback Pending</option>
+          <option value="Other">Other</option>
+        </select>
+        <input id="personalRemark" type="text" placeholder="Remark (optional)">
+        <button type="submit">Add Personal Task</button>
+      </form>
+      <p id="personalMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Today's Pending Personal Tasks</h2>
+      <ul id="personalTodayList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Feedback Pending Tasks</h2>
+      <ul id="personalFeedbackList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Other Personal Tasks</h2>
+      <ul id="personalAllList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Completed Personal Tasks (Archive)</h2>
+      <ul id="personalDoneList"></ul>
+    </section>
+  </main>
+
+  <script src="../auth.js"></script>
+  <script type="module" src="./personal.js"></script>
+</body>
+</html>

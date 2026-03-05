@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeTable</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>TimeTable</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="../index.html">Dashboard</a>
+      <a href="./work.html">Work</a>
+      <a href="./personal.html">Personal</a>
+      <a href="./habits.html">Habits</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./analytics.html">Analytics</a>
+      <a href="./timetable.html" aria-current="page">TimeTable</a>
+    </nav>
+  </header>
+
+  <main class="page-grid">
+    <section class="card">
+      <h2>Add Time Block</h2>
+      <form id="timetableForm" class="stack-form">
+        <input id="ttDate" type="date" required>
+        <input id="ttStartTime" type="time" required>
+        <input id="ttEndTime" type="time" required>
+        <input id="ttBlock" type="text" placeholder="Block (e.g., Deep Work)" required>
+        <select id="ttType" required>
+          <option value="Deep Work">Deep Work</option>
+          <option value="Admin">Admin</option>
+          <option value="Personal">Personal</option>
+          <option value="Break">Break</option>
+          <option value="Other">Other</option>
+        </select>
+        <input id="ttLinkedTask" type="text" placeholder="Linked Task (optional)">
+        <select id="ttStatus" required>
+          <option value="Pending" selected>Pending</option>
+          <option value="Other">Other</option>
+        </select>
+        <input id="ttRemark" type="text" placeholder="Remark (optional)">
+        <button type="submit">Add Time Block</button>
+      </form>
+      <p id="ttMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Today's Pending Blocks</h2>
+      <ul id="ttTodayPendingList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Other Blocks</h2>
+      <ul id="ttOtherList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Completed Blocks (Archive)</h2>
+      <ul id="ttDoneList"></ul>
+    </section>
+  </main>
+
+  <script src="../auth.js"></script>
+  <script type="module" src="./timetable.js"></script>
+</body>
+</html>

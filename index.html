@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Dashboard</h1>
+    <p id="streakBadge" class="streak-badge">Streak: --</p>
+    <nav class="top-nav">
+      <a href="./index.html" aria-current="page">Dashboard</a>
+      <a href="./pages/work.html">Work</a>
+      <a href="./pages/personal.html">Personal</a>
+      <a href="./pages/habits.html">Habits</a>
+      <a href="./pages/journal.html">Journal</a>
+      <a href="./pages/analytics.html">Analytics</a>
+      <a href="./pages/timetable.html">TimeTable</a>
+    </nav>
+    <div class="quick-actions">
+      <button id="startCheckinBtn" class="button" type="button">Start Daily Check-in</button>
+    </div>
+  </header>
+
+  <main class="dashboard-grid">
+    <section class="card" id="topBar">
+      <h2>Top Bar</h2>
+      <div class="top-metrics">
+        <article class="metric-card">
+          <p class="metric-label">Daily Score</p>
+          <p class="metric-value" id="dailyScore">-- / 10</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">Mood</p>
+          <p class="metric-value" id="moodToday">-- / 10</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">Habit Score</p>
+          <p class="metric-value" id="habitScore">-- / 4</p>
+        </article>
+      </div>
+      <p id="motivationText" class="muted">Keep going.</p>
+      <div class="status-chips">
+        <span id="rewardText" class="chip success" hidden></span>
+        <span id="reminderText" class="chip warning" hidden></span>
+      </div>
+    </section>
+
+    <section class="card" id="workTasks">
+      <h2>Today's Work Tasks</h2>
+      <ul id="workTaskList"></ul>
+    </section>
+
+    <section class="card" id="personalTasks">
+      <h2>Today's Personal Tasks</h2>
+      <ul id="personalTaskList"></ul>
+    </section>
+
+    <section class="card" id="habitTracker">
+      <h2>Habit Tracker</h2>
+      <div class="habits-row">
+        <label><input type="checkbox" id="habitStudy"> Study</label>
+        <label><input type="checkbox" id="habitReading"> Reading</label>
+        <label><input type="checkbox" id="habitWorkout"> Workout</label>
+        <label><input type="checkbox" id="habitPlanning"> Planning</label>
+      </div>
+    </section>
+
+    <section class="card" id="journal">
+      <h2>Quick Journal Entry</h2>
+      <form id="journalForm">
+        <input type="text" id="journalGood" placeholder="Good" required>
+        <input type="text" id="journalProblem" placeholder="Problem" required>
+        <input type="text" id="journalImprovement" placeholder="Improvement" required>
+        <select id="journalMood" required>
+          <option value="">Mood (1-10)</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+        </select>
+        <input type="text" id="journalRemark" placeholder="Remark (optional)">
+        <button type="submit">Save Journal</button>
+      </form>
+    </section>
+
+    <section class="card" id="weeklyChart">
+      <h2>Weekly Progress</h2>
+      <p id="weeklySeries">Mon -- | Tue -- | Wed -- | Thu -- | Fri -- | Sat -- | Sun --</p>
+    </section>
+  </main>
+
+  <script src="./auth.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
